@@ -9,32 +9,19 @@
   </head>
   <body>
     <div id="app">
-      <div>
-        <ol>
-          <todo-item v-for="todo in todos" :todo="todo"></todo-item>
-        </ol>
-      </div>
+      <p>{{ message }}</p>
+      <input v-model="message" />
     </div>
 
     <script>
       const App = {
         data() {
           return {
-            todos: [
-              { description: "eat" },
-              { description: "drink" },
-              { description: "sleep" },
-            ],
+            message: "hello world.",
           };
         },
       };
-      const app = Vue.createApp(App);
-      app.component("todo-item", {
-        props: ["todo"],
-        template: `<li>{{todo.description}}</li>`,
-      });
-
-      app.mount("#app");
+      Vue.createApp(App).mount("#app");
     </script>
   </body>
 </html>
