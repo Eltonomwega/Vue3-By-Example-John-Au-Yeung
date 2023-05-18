@@ -9,21 +9,15 @@
   </head>
   <body>
     <div id="app">
-      <p>{{ reversedMessage }}</p>
-      <input v-model="message" />
+      <span v-if="show">hello world</span>
     </div>
 
     <script>
       const App = {
         data() {
           return {
-            message: "hello world.",
+            show: true,
           };
-        },
-        computed: {
-          reversedMessage() {
-            return this.message.split("").reverse().join("");
-          },
         },
       };
       Vue.createApp(App).mount("#app");
